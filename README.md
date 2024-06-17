@@ -1,3 +1,4 @@
+! [Alt text](/static-website-deployement-on-aws.png)
 ## Static Website Deployment on AWS
 
 This repository contains the resources and instructions to deploy a static HTML web application on AWS using various AWS services. The deployment leverages a range of AWS services to ensure reliability, scalability, and security.
