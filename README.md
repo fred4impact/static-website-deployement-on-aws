@@ -1,12 +1,5 @@
 ## Static Website Deployment on AWS
 
-```bash
-
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
-
-```
-
 This repository contains the resources and instructions to deploy a static HTML web application on AWS using various AWS services. The deployment leverages a range of AWS services to ensure reliability, scalability, and security.
 
 ## Project Overview
