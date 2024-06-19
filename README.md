@@ -38,38 +38,26 @@ Follow these steps to deploy the static website:
 
 1. **Clone the Repository:**
     
-    ```bash
-    #!/bin/bash
-    
-    #STATIC WEBSITE INSTALLATION SCRIPT ON THE EC2
-    
-    # Switch to the root user to gain full administrative privileges
-    sudo su
-    
-    # Update all installed packages to their latest versions
-    yum update -y
-    
-    # Install Apache HTTP Server
-    yum install -y httpd
-    
-    # Change the current working directory to the Apache web root
-    cd /var/www/html
-    
-    # Install Git
-    yum install git -y
-    
-    # Clone the project GitHub repository to the current directory
-    git clone https://github.com/fred4impact/static-website-deployement-on-aws.git
-    
-    # Copy all files, including hidden ones, from the cloned repository to the Apache web root
-    cp -R host-a-static-website-on-aws/. /var/www/html/
-    
-    # Remove the cloned repository directory to clean up unnecessary files
-    rm -rf host-a-static-website-on-aws
-    
-    # Enable the Apache HTTP Server to start automatically at system boot
-    systemctl enable httpd 
-    
+ #!/bin/bash
+
+# Update package lists and install required packages
+sudo apt update
+sudo apt install apache2 git -y
+
+# Clone repository and copy files to Apache document root
+git clone https://github.com/fred4impact/static-website-deployement-on-aws.git
+sudo cp -R static-website-deployement-on-aws/. /var/www/html/
+
+# Clean up cloned repository
+sudo rm -rf static-website-deployement-on-aws
+
+# Enable and start Apache
+sudo systemctl enable apache2
+sudo systemctl start apache2
+
+# Display Apache status
+sudo systemctl status apache2
+
     # Start the Apache HTTP Server to serve web content
     systemctl start httpd
     ```
