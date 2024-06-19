@@ -37,8 +37,8 @@ Before you begin, ensure you have the following:
 Follow these steps to deploy the static website:
 
 1. **Clone the Repository:**
-    
- #!/bin/bash
+ ```
+#!/bin/bash
 
 # Update package lists and install required packages
 sudo apt update
@@ -58,6 +58,6 @@ sudo systemctl start apache2
 # Display Apache status
 sudo systemctl status apache2
 
-    # Start the Apache HTTP Server to serve web content
-    systemctl start httpd
-    ```
+# Start the Apache HTTP Server to serve web content
+ systemctl start httpd
+ ```
