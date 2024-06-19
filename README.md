@@ -40,9 +40,14 @@ Follow these steps to deploy the static website:
  ```
 #!/bin/bash
 
+sudo su
+
 # Update package lists and install required packages
-sudo apt update
-sudo apt install apache2 git -y
+sudo yum update -y
+sudo yum install httpd git -y
+
+# Change to the Apache document root directory
+cd /var/www/html
 
 # Clone repository and copy files to Apache document root
 git clone https://github.com/fred4impact/static-website-deployement-on-aws.git
@@ -52,12 +57,10 @@ sudo cp -R static-website-deployement-on-aws/. /var/www/html/
 sudo rm -rf static-website-deployement-on-aws
 
 # Enable and start Apache
-sudo systemctl enable apache2
-sudo systemctl start apache2
+sudo systemctl enable httpd
+sudo systemctl start httpd
 
 # Display Apache status
-sudo systemctl status apache2
+sudo systemctl status httpd
 
-# Start the Apache HTTP Server to serve web content
- systemctl start httpd
  ```
